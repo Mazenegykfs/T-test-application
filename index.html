@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-test Web Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>T-test Web Application</h1>
+
+        <!-- Test Type Selection -->
+        <label for="testType">Select Test Type:</label>
+        <select id="testType">
+            <option value="independent">Independent</option>
+            <option value="paired">Paired</option>
+        </select>
+
+        <!-- Experimental File Input -->
+        <div>
+            <label for="expFile">Experimental/Posttest File:</label>
+            <input type="file" id="expFile">
+        </div>
+
+        <!-- Control File Input -->
+        <div>
+            <label for="conFile">Control/Pretest File:</label>
+            <input type="file" id="conFile">
+        </div>
+
+        <!-- Run Button -->
+        <button id="runTest">Run Test</button>
+
+        <!-- Results Section -->
+        <div id="results">
+            <h2>Results</h2>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Skills</th>
+                        <th>Groups</th>
+                        <th>Mean</th>
+                        <th>n</th>
+                        <th>Std. Deviation</th>
+                        <th>t</th>
+                        <th>df</th>
+                        <th>Sig</th>
+                        <th>d</th>
+                        <th>Effect Size</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Chart Section -->
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
